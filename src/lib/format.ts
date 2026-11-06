@@ -1,0 +1,8 @@
+/** Nilai tidak tersedia (null) selalu ditampilkan "—", tidak pernah sebagai 0. */
+export const fmtNum = (v: number | null | undefined, unit: string, digits = 1): string => (v === null || v === undefined || !Number.isFinite(v) ? "—" : `${Number(v.toFixed(digits))} ${unit}`);
+export const fmtAge = (ts: number | null, now: number): string => { if (ts === null) return "—"; const s = Math.max(0, Math.round((now - ts) / 1000)); return s < 60 ? `${s} dtk lalu` : `${Math.round(s / 60)} mnt lalu`; };
+export const fmtBps = (v: number | null | undefined): string => (v === null || v === undefined || !Number.isFinite(v) ? "—" : v >= 1e6 ? `${(v / 1e6).toFixed(2)} Mbps` : `${(v / 1e3).toFixed(1)} Kbps`);
+export const fmtBytes = (v: number | null | undefined): string => (v === null || v === undefined || !Number.isFinite(v) ? "—" : v >= 1e9 ? `${(v / 1e9).toFixed(2)} GB` : v >= 1e6 ? `${(v / 1e6).toFixed(1)} MB` : `${(v / 1e3).toFixed(1)} KB`);
+export const fmtDur = (sec: number | null): string => (sec === null ? "—" : sec >= 86400 ? `${Math.floor(sec / 86400)} hari ${Math.floor((sec % 86400) / 3600)} jam` : sec >= 3600 ? `${Math.floor(sec / 3600)} jam ${Math.floor((sec % 3600) / 60)} mnt` : `${Math.floor(sec / 60)} mnt`);
+export const COND_ID: Record<string, string> = { NORMAL: "Normal", DEGRADED: "Menurun", GATEWAY_DOWN: "Gateway mati", INTERNET_DOWN: "Internet terputus", UNKNOWN: "Tidak diketahui" };
+export function download(name: string, csv: string): void { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" })); a.download = name; a.click(); }

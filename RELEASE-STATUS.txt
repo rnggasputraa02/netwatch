@@ -1,0 +1,8 @@
+NetWatch v5.1.1 — STATUS: KANDIDAT FINAL (BELUM FINAL)
+
+Lulus (Linux/sandbox, mock): unit 98/98, shortcut 38/38 (Chromium).
+TIDAK dijalankan: npm ci, npm audit, typecheck penuh, lint, build, E2E, tes handler API (registry npm tidak terjangkau).
+Windows: hanya baseline v5.1.0 dari pengguna; v5.1.1 belum diuji. HG8145V5: UNKNOWN (upnp_no_response), kompatibilitas tidak diklaim.
+Keamanan: 13 temuan dependensi (audit Windows) BELUM diperbaiki — tidak ada dependensi yang diubah; lihat docs/DEPENDENCY-UPGRADE-PLAN.md
+
+Langkah menuju final: docs/INSTALL-WINDOWS.md, docs/WINDOWS-VERIFICATION.md, docs/THROUGHPUT-TEST.md, docs/SECURITY-AUDIT-v5.1.1.md

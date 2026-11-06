@@ -1,0 +1,17 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply bg-bg text-slate-200 antialiased}
+.card{@apply bg-pn border border-bd rounded-2xl p-4 shadow-lg shadow-black/20}
+.btn{@apply px-3 py-1.5 rounded-lg border border-bd bg-bg hover:border-sky text-sm}
+.btn-p{@apply px-3 py-1.5 rounded-lg bg-sky text-slate-900 font-semibold text-sm}
+.inp{@apply bg-bg border border-bd rounded-lg px-3 py-1.5 text-sm w-full}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* fokus keyboard terlihat jelas */
+:where(a,button,input,select,textarea,summary,[role=option],[tabindex]):focus-visible{outline:2px solid #3b9cff;outline-offset:2px}
+[data-perf=saver] .card{box-shadow:none}
+[data-anim=subtle] .page{animation:fadeUp .15s ease-out}
+[data-anim=full] .page{animation:fadeUp .3s ease-out}
+[data-anim=full] dialog[open],[data-anim=subtle] dialog[open]{animation:fadeUp .18s ease-out}
+[data-anim=full] .card{transition:transform .15s,border-color .15s}
+[data-anim=full] .card:hover{transform:translateY(-2px);@apply border-sky/40}
+[data-anim=off] *,[data-perf=saver] *{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
